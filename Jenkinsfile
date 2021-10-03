@@ -15,6 +15,16 @@ pipeline {
       }
     }
 
+    stage('Certify QA') {
+      when {
+        branch 'master'
+      }
+      steps {
+        echo 'Manual Certify'
+        input 'Do you want to certify?'
+      }
+    }
+
     stage('Ui Testing (Smoke)') {
       parallel {
         stage('Ui Testing (Smoke)') {
