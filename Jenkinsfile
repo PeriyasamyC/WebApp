@@ -17,7 +17,7 @@ pipeline {
 
     stage('Certify QA') {
       when {
-        branch 'master'
+        branch 'branch'
       }
       steps {
         echo 'Manual Certify'
@@ -67,7 +67,7 @@ pipeline {
 
     stage('Prod Deploy') {
       when {
-        branch 'master'
+        branch 'branch'
       }
       steps {
         echo 'Deploy to Prod'
